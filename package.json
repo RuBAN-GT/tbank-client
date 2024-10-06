@@ -1,0 +1,70 @@
+{
+  "name": "tbank-client",
+  "description": "Simple T-Bank (Tinkoff Bank) API client helping to utilize Investment functionality.",
+  "packageManager": "yarn@4.5.0",
+  "author": "Dmitry Ruban",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "homepage": "https://github.com/RuBAN-GT/tbank-client#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RuBAN-GT/tbank-client.git"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "keywords": [
+    "tinkoff",
+    "tbank",
+    "investment",
+    "client",
+    "api",
+    "finance",
+    "grpc"
+  ],
+  "scripts": {
+    "proto:generate": "buf generate",
+    "build:lib": "tsup",
+    "build:watch": "tsup --watch",
+    "build": "yarn proto:generate && yarn build:lib",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch --runInBand"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.1.0",
+    "long": "^5.2.3",
+    "nice-grpc": "^2.1.10",
+    "nice-grpc-common": "^2.0.2",
+    "protobufjs": "^7.4.0",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@swc/core": "1.7.26",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^20.16.10",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.51.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-detemiro": "^1.0.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "grpc-tools": "^1.12.4",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "ts-proto": "^2.2.3",
+    "tsup": "^8.3.0",
+    "typescript": "~5.3.0"
+  }
+}
